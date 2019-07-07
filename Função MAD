@@ -1,0 +1,13 @@
+#Função para calcular MAD nas colunas de erro
+#median absolute deviationfrom the median    
+colmad <- function(x){
+  ## create a vector to store the results of your for loop
+  output <- vector("numeric", 15)
+  for (i in 1:ncol(x)){
+  output[i] <-  mad(abs(x[,i] - mad(x[,i], na.rm=TRUE)), na.rm=T)
+       }
+  ## have the return value from the function be
+  ## the object 'output'
+  return(output)
+}
+colmad(earima)
